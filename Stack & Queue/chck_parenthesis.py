@@ -1,5 +1,5 @@
 open_list = ["(","{","["]
-close_list = [")","]","}"]
+close_list = [")","}","]"]
 
 def check(myStr):
     stack = []
@@ -8,8 +8,7 @@ def check(myStr):
             stack.append(i)
         elif i in close_list:
             pos = close_list.index(i)
-            if ((len(stack) > 0) and
-                (open_list[pos] == stack[len(stack)-1])):
+            if ((len(stack) > 0) and (open_list[pos] == stack[len(stack)-1])):
                 stack.pop()
             else:
                 return "Unbalanced"
@@ -20,5 +19,5 @@ def check(myStr):
  
 my_str1 = "{[]{()}}"
 print(my_str1,"-", check(my_str1))
-my_str2 = "{([})]"
+my_str2 = "{([])"
 print(my_str2,"-",check(my_str2))

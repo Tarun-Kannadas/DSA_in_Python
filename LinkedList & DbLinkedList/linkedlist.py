@@ -16,15 +16,18 @@ class addval:
 
    def AddAtBeginning(self,newdata):
       NewNode = Node(newdata)
-
       NewNode.next = self.head
       self.head = NewNode
 
    def AddAtEnd(self,newdata):
       NewNode = Node(newdata)
-
-      NewNode.next = self.head
-      self.head = NewNode
+      if self.head is None:
+         self.head = NewNode
+         return
+      last = self.head
+      while last.next:
+         last = last.next
+      last.next = NewNode
 
 l1 = addval()
 l1.head = Node("564")
