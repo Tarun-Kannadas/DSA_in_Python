@@ -10,25 +10,29 @@ def isFull():
 def isEmpty():
     return itemCount == 0
 
+def peek():
+    return intArray[front]
+
 def insert(data):
     global rear, itemCount
     if not isFull():
         rear = rear + 1
         intArray[rear] = data
-        itemCount += 1
+        itemCount = itemCount + 1    
     else:
-        print("Queue is full! Cannot insert.")
+        print("\nQueue is full! Cannot insert the value:", data)
 
 def removeData():
     global front, itemCount
     if not isEmpty():
         data = intArray[front]
-        front += 1
-        itemCount -= 1
+        intArray[front] = 0
+        front = front + 1
+        itemCount = itemCount - 1
+        print(f"Removed: {data}")
         return data
     else:
-        print("Queue is empty! Cannot remove.")
-        return None
+        print("\nQueue is empty! Cannot remove.")
 
 insert(3)
 insert(5)
@@ -37,11 +41,28 @@ insert(1)
 insert(12)
 insert(15)
 
-print("Queue:")
+print("\nPrinting the front Element: ",peek())
+
+print("\nQueue:")
 for i in range(front, rear + 1):
     print(intArray[i], end = " ")
 
-print("\n\nDeleting elements...")
+print("\nUpdated Queue...", intArray)
 while not isEmpty():
-    n = removeData()
-    print("Got Removed",n,"")
+    removeData()
+
+removeData()
+
+print("\nQueue: ", intArray)
+
+front = 0
+rear = -1
+
+insert(3)
+insert(5)
+insert(9)
+insert(1)
+insert(12)
+insert(15)
+
+print("\nQueue: ", intArray)

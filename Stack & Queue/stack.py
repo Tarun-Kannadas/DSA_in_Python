@@ -30,6 +30,7 @@ def pop():
     global data,top
     if(isEmpty() == 0):
         data = stack[top]
+        stack[top] = 0
         top = top - 1
         return data
     else:
@@ -51,3 +52,5 @@ print("\nPopping Elements...")
 while (isEmpty() == 0):
     data = pop()
     print("Popping Elements:",data,end=" \n") 
+
+print("\nMy Stack is:", stack)
