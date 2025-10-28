@@ -3,7 +3,6 @@ class Node:
         self.data=data
         self.next = None
 
-
 class SLL:
     def printval(self):
         printval = self.head

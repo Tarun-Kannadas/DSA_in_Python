@@ -29,7 +29,7 @@ def removeData():
         intArray[front] = 0
         front = front + 1
         itemCount = itemCount - 1
-        print(f"Removed: {data}")
+        print(f"Removed: {data}, Front: {front}, ItemCount: {itemCount}")
         return data
     else:
         print("\nQueue is empty! Cannot remove.")
@@ -64,5 +64,9 @@ insert(9)
 insert(1)
 insert(12)
 insert(15)
+
+print("\nQueue: ", intArray)
+
+removeData()
 
 print("\nQueue: ", intArray)

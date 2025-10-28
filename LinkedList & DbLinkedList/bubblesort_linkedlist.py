@@ -20,16 +20,16 @@ class SLL:
     def bubble_sort(self):
         if not self.head:
             return
-        
+
         swapped = True
         while swapped:
             swapped = False
             current = self.head
-            
+
             while current.next:
-                if current.next > current.next.data:
-                
-                    current.data, current.next.data > current.next.data, current.data
+                if current.data > current.next.data:
+                    # Swap the data values
+                    current.data, current.next.data = current.next.data, current.data
                     swapped = True
                 current = current.next
     
