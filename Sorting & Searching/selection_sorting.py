@@ -5,7 +5,10 @@ def selection_sort(arr):
         for j in range(i+1,n):
             if arr[j]<arr[first_val]:
                 first_val = j
-        arr[i],arr[first_val] = arr[first_val],arr[i]
+        temp = arr[i]
+        arr[i] = arr[first_val]
+        arr[first_val] = temp
+
 
 n = int(input("Enter the number of elements: "))
 arr = []
