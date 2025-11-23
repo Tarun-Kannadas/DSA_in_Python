@@ -10,14 +10,13 @@ def preorder_traversal(root):
         preorder_traversal(root.leftchild)
         preorder_traversal(root.rightchild)
 
-if __name__ == "__main__":
-    root = Node(45)
-    root.leftchild = Node(28)
-    root.rightchild = Node(56)
-    root.leftchild.leftchild = Node(14)
-    root.leftchild.rightchild = Node(32)
-    root.rightchild.leftchild = Node(52)
-    root.rightchild.rightchild = Node(62)
+root = Node(45)
+root.leftchild = Node(28)
+root.rightchild = Node(56)
+root.leftchild.leftchild = Node(14)
+root.leftchild.rightchild = Node(32)
+root.rightchild.leftchild = Node(52)
+root.rightchild.rightchild = Node(62)
 
-    print("Preorder Traversal: ")
-    preorder_traversal(root)
+print("Preorder Traversal: ")
+preorder_traversal(root)
