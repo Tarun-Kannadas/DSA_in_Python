@@ -1,27 +1,43 @@
-def heapify(heap, n, i):
+def heapify(heap,n,i):
     maximum = i
-    l = 2*i+1
-    r = 2*i+2
-    if(l<n and heap[i]<heap[l]):
+    l = i*2 + 1
+    r = i*2 + 2
+    # Checks for left child
+    if (l<n and heap[i]<heap[l]):
         maximum = l
-    if(r<n and heap[maximum]<heap[r]):
+    # Check for right child
+    if (r<n and heap[maximum]<heap[r]):
         maximum = r
+    # For Root Node
     if (maximum != i):
-        heap[i],heap[maximum] = heap[maximum],heap[i]
-        heapify(heap,n,maximum)
+        temp = heap[i]
+        heap[i] = heap[maximum]
+        heap[maximum] = temp
+        heapify(heap,maximum,n)
 
-def heap_sort(heap):
+def heapSort(heap):
     n = len(heap)
+    # Maxheap
     for i in range(n,-1,-1):
-        heapify(heap,n,i)
+        heapify(heap, n, i)
+    # Swaps the element found in the name of element extraction
     for i in range(n-1,0,-1):
-        heap[i], heap[0] = heap[0], heap[i]
-        heapify(heap,i,0)
+        temp = heap[i]
+        heap[i] = heap[0]
+        heap[0] = temp
+        heapify(heap, i, 0)
 
 heap = [4,3,1,0,2]
-heap_sort(heap)
-n=len(heap)
-print("Heap array: ")
-print(heap)
-print("The sorted array is: ")
-print(heap)
+n = len(heap)
+
+print("Array before Sorting: ")
+
+for i in range(n):
+    print(heap[i], end = " ")
+
+heapSort(heap)
+
+print("\nArray after Sorting: ")
+
+for i in range(n):
+    print(heap[i], end = " ")
