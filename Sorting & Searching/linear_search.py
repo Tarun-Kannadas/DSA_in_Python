@@ -3,10 +3,10 @@ def selection_sort(arr,size):
         first_val = i
         for j in range(i+1,size):
             if arr[j]<arr[first_val]:
-                first_val = j
-        temp = arr[i]
-        arr[i] = arr[first_val]
-        arr[first_val] = temp
+                # first_val = j
+                temp = arr[j]
+                arr[j] = arr[first_val]
+                arr[first_val] = temp
 
 def linear_search(arr,key,size):
     for i in range(size):
