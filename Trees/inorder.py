@@ -6,7 +6,7 @@ class Node:
 
 def preorder_traversal(root):
     if root:
-        print(root.val)
+        print(root.val, end = " ")
         preorder_traversal(root.leftchild)
         preorder_traversal(root.rightchild)
 

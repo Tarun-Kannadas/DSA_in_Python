@@ -27,7 +27,7 @@ def heapSort(heap):
         heap[0] = temp
         heapify(heap, i, 0)
 
-heap = [4,3,1,0,2]
+heap = [45,28,14,32,56,52,62]
 n = len(heap)
 
 print("Array before Sorting: ")
