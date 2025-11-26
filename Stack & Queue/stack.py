@@ -3,19 +3,19 @@ stack = [0]*maxsize
 top = -1
 
 def isEmpty():
-    if (top == -1):
+    if top == -1:
         return 1
     else:
         return 0
-
-def isFull():
-    if (top == maxsize-1):
-        return 1
-    else:
-        return 0
-
+    
 def peek():
     return stack[top]
+    
+def isFull():
+    if top == maxsize-1:
+        return 1
+    else:
+        return 0
 
 def push(data):
     global top
@@ -23,34 +23,35 @@ def push(data):
         top = top + 1
         stack[top] = data
     else:
-        print("Cannot enter element, Stack is full!")
-    return data
+        print(f"\nStack is Full! Can't Insert the value '{data}'")
 
 def pop():
-    global data,top
+    global top
     if(isEmpty() == 0):
         data = stack[top]
         stack[top] = 0
         top = top - 1
-        return data
+        print("\nElement Popped: ", data)
     else:
-        print("Stack is Empty")
-    return data
+        print("\nStack is Empty!")
 
-push(44)
-push(59)
-push(123)
-push(31)
-push(90)
+push(25)
+push(56)
+push(32)
+push(5)
+push(18)
+push(15)
 
-print("My Stack is:", stack)
+n=len(stack)
 
-print("\nElement at the top of stack: ", peek())
+for i in range(n):
+    print(stack[i], end = " ")
 
-print("\nPopping Elements...")
+print("\nStack's Top elements is: ", peek())
 
 while (isEmpty() == 0):
-    data = pop()
-    print("Popping Elements:",data,end=" \n") 
+    pop()
 
-print("\nMy Stack is:", stack)
+print("\nStack after popping elements: ")
+for i in range(n):
+    print(stack[i], end = " ")
