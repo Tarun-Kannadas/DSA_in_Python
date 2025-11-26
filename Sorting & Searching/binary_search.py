@@ -7,8 +7,8 @@ def binary_search(a, low, high, key):
             binary_search(a,low,mid-1,key)
         elif(key>a[mid]):
             binary_search(a,mid+1,high,key)
-    if(low>high):
-        print("Unsuccessful Search")
+    else:
+        print(f"Unsuccessful Search of {key}")
 
 a = [7,10,12,18,22,34,45]
 n =len(a)
