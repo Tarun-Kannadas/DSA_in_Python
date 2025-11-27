@@ -17,7 +17,7 @@ def is_empty():
 def print_list():
     ptr = head
     while ptr != None:
-        print(f"({ptr.key},{ptr.data})")
+        print(f"({ptr.key},{ptr.data})", end = " ")
         ptr = ptr.next
 #insert link at the first location
 def insert_first(key, data):
