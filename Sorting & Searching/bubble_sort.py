@@ -5,15 +5,17 @@ def bubble_sort(arr):
         for j in range(n-i-1):
             if arr[j] > arr[j+1]:
                 arr[j],arr[j+1] = arr[j+1],arr[j]
-    return arr
+                swapped = True
+        if swapped == False:
+            break
 
-n = int(input("Enter how many numbers needed: "))
+# n = int(input("Enter how many numbers needed: "))
 arr = []
-for i in range(n):
-    val = int(input(f"Enter the value {i+1}: "))
-    arr.append(val)
+# for i in range(n):
+#     val = int(input(f"Enter the value {i+1}: "))
+#     arr.append(val)
 
-# arr = [45,56,12,23,5]
+arr = [45,56,12,23,5]
 print(arr)
 bubble_sort(arr)
 print(arr)
